@@ -1,7 +1,7 @@
 backend:
-  name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
-  base_url: https://gh-oauth-for-gbdotcom-dot-gungorbudakcom.appspot.com
+  name: github
+  repo: test-netlify-cms-2/test-netlify-cms-2.github.io
+  branch: main
 media_folder: "assets/uploads"
 collections:
   - name: "blog"
