@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <title>{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ "/assets/vendor/bootstrap-5.0.1/bootstrap.min.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/vendor/bootstrap-icons-1.5.0/bootstrap-icons.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  {%- feed_meta -%}
+  {%- include google-analytics.html -%}
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">{{ site.title }}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            {% for item in site.data.navigation.top %}
+            <li class="nav-item text-end"><a href="{{ item.url }}" class="nav-link">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <main>
+    {{ content }}
+    </main>
+
+    <footer>
+      <div class="d-flex flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row align-items-center justify-content-between">
+        <div>
+          <ul class="nav">
+            {% for item in site.data.navigation.bottom %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ item.url }}" title="{{ item.title }}" target="_blank"><i class="bi bi-{{ item.icon }}"></i> {{ item.name }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="p-3 text-muted">
+          &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. {{ site.title }}
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="{{ "/assets/vendor/bootstrap-5.0.1/bootstrap.bundle.min.js" | relative_url }}"></script>
+
+</body>
+</html>

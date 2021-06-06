@@ -13,34 +13,34 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Testing Netlify CMS
-email: your-email@example.com
+title: Name Surname
+email: name-surname@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  A sample blog for testing Netlify CMS
+  Name Surname's website
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://test-netlify-cms-2.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+google_analytics_id:
+disqus_shortname:
 
+collections_dir: collections
 collections:
-  # pages:
-  #   output: true
-  #   permalink: /:title/
+  pages:
+    output: true
+    permalink: /:title/
   posts:
     output: true
     permalink: /blog/:year/:month/:day/:title/
 
 # Build settings
 markdown: kramdown
-remote_theme: test-netlify-cms-2/jekyll-theme-bootstrap-five
+
 plugins:
   - jekyll-feed
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - .bundle
+  - vendor
