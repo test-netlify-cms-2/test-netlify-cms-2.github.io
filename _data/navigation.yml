@@ -1,18 +1,17 @@
 top:
-  - title: Home
+  - icon:
+    name: Home
     url: /
-  - title: About
+  - icon:
+    name: About
     url: /about/
 bottom:
   - icon: github
     name: GitHub
     url: https://github.com/gungorbudak
-    title: Güngör Budak GitHub
   - icon: linkedin
     name: LinkedIn
     url: https://www.linkedin.com/in/gungorbudak
-    title: Güngör Budak LinkedIn
   - icon: twitter
     name: Twitter
     url: https://twitter.com/gungorbudak
-    title: Güngör Budak Twitter
