@@ -10,27 +10,31 @@ publish_mode: editorial_workflow
 
 media_folder: "public/images"
 collections:
-  - name: "navigation"
-    label: "Navigation"
-    description: "Titles and URLs for top and bottom navigation."
-    file: "_data/navigation.yml"
-    fields:
-      - label: "Top"
-        name: "top"
-        widget: "list"
-        summary: "{{fields.name}} - {{fields.url}}"
-        fields: 
-          - { label: Icon, name: icon, widget: string }
-          - { label: Name, name: name, widget: string }
-          - { label: URL, name: url, widget: string }
-      - label: "Bottom"
-        name: "bottom"
-        widget: "list"
-        summary: "{{fields.name}} - {{fields.url}}"
+  - name: "global"
+    label: "Global"
+    description: "Configurations controlling entire website."
+    files:
+      - name: "navigation"
+        label: "Navigation"
+        description: "Titles and URLs for top and bottom navigation."
+        file: "_data/navigation.yml"
         fields:
-          - { label: Icon, name: icon, widget: string }
-          - { label: Name, name: name, widget: string }
-          - { label: URL, name: url, widget: string }
+          - label: "Top"
+            name: "top"
+            widget: "list"
+            summary: "{{fields.name}} - {{fields.url}}"
+            fields: 
+              - { label: Icon, name: icon, widget: string }
+              - { label: Name, name: name, widget: string }
+              - { label: URL, name: url, widget: string }
+          - label: "Bottom"
+            name: "bottom"
+            widget: "list"
+            summary: "{{fields.name}} - {{fields.url}}"
+            fields:
+              - { label: Icon, name: icon, widget: string }
+              - { label: Name, name: name, widget: string }
+              - { label: URL, name: url, widget: string }
   - name: "page"
     label: "Pages"
     label_singular: "Page"
