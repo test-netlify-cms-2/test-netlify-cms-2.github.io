@@ -10,6 +10,27 @@ publish_mode: editorial_workflow
 
 media_folder: "public/images"
 collections:
+  - name: "navigation"
+    label: "Navigation"
+    description: "Titles and URLs for top and bottom navigation."
+    file: "_data/navigation.yml"
+    fields:
+      - label: "Top"
+        name: "top"
+        widget: "list"
+        summary: "{{fields.name}} - {{fields.url}}"
+        fields: 
+          - { label: Icon, name: icon, widget: string }
+          - { label: Name, name: name, widget: string }
+          - { label: URL, name: url, widget: string }
+      - label: "Bottom"
+        name: "bottom"
+        widget: "list"
+        summary: "{{fields.name}} - {{fields.url}}"
+        fields:
+          - { label: Icon, name: icon, widget: string }
+          - { label: Name, name: name, widget: string }
+          - { label: URL, name: url, widget: string }
   - name: "page"
     label: "Pages"
     label_singular: "Page"
@@ -19,7 +40,7 @@ collections:
     create: true
     editor:
       preview: true
-    filter: {field: "layout", value: "page"}
+    filter: { field: "layout", value: "page" }
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
       - { label: "Title", name: "title", widget: "string" }
@@ -45,18 +66,16 @@ collections:
     view_groups:
       - label: Drafts
         field: draft
-    filter: {field: "layout", value: "post"}
+    filter: { field: "layout", value: "post" }
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Created At", name: "created_at", widget: "datetime" }
       - { label: "Updated At", name: "updated_at", widget: "datetime" }
-      - {
-          label: "Tags",
-          name: "tags",
-          widget: "list",
-          summary: '{{fields.tag}}',
-          field: { label: Tag, name: tag, widget: string },
-        }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        summary: '{{fields.tag}}'
+        field: { label: Tag, name: tag, widget: string }
       - { label: "Content", name: "body", widget: "markdown" }
