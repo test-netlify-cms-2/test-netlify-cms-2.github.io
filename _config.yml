@@ -30,7 +30,7 @@ collections:
 
 # Build settings
 markdown: kramdown
-theme: minima
+remote_theme: test-netlify-cms-2/jekyll-theme-bootstrap-five
 plugins:
   - jekyll-feed
 # Exclude from processing.
