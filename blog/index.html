@@ -1,0 +1,63 @@
+---
+layout: page
+title: Blog
+created_at: 2021-06-06T19:33:47.364Z
+updated_at: 2021-06-06T19:33:47.373Z
+pagination:
+  enabled: true
+---
+
+<div class="row">
+  <div class="col-md-8">
+    <main>
+      {% for page in paginator.posts %}
+      <article class="post">
+        <h2 class="post-title">
+          <a href="{{ page.url }}">
+            {{ page.title }}
+          </a>
+        </h2>
+        {% include post-meta.html %}
+        {{ page.excerpt }}
+        <p>
+          <a href="{{ page.url }}">Read more &rarr;</a>
+        </p>
+        {% unless forloop.last %}
+          <hr class="half-rule">
+        {% endunless %}
+      </article>
+      {% endfor %}
+    </main>
+    {% if paginator.total_pages > 1 %}
+      <nav class="nav-pagination" aria-label="Pagination">
+        <ul class="pagination justify-content-center">
+          {% if paginator.previous_page %}
+            <li class="page-item">
+              <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">
+                &larr; Newer
+              </a>
+            </li>
+          {% else %}
+            <li class="page-item disabled">
+              <span class="page-link">Newer</span>
+            </li>
+          {% endif %}
+          {% if paginator.next_page %}
+            <li class="page-item">
+              <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl }}">
+                Older &rarr;
+              </a>
+            </li>
+          {% else %}
+            <li class="page-item disabled">
+              <span class="page-link">Older</span>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+    {% endif %}
+  </div>
+  <div class="col-md-4">
+    {% include sidebar.html %}
+  </div>
+</div>

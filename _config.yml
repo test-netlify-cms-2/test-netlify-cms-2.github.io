@@ -34,9 +34,14 @@ collections:
 # Build settings
 markdown: kramdown
 
+paginate: 2
+paginate_path: "/blog/page/:num/"
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-sitemap
 
 exclude:
   - Gemfile
