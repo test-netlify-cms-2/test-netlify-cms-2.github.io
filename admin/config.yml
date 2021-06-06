@@ -11,18 +11,26 @@ publish_mode: editorial_workflow
 media_folder: "public/images"
 collections:
   - name: "blog"
-    label: "Blog posts"
-    label_singular: 'Blog post'
+    label: "Posts"
+    label_singular: "Post"
     description: >
       The collection for the blog posts at the website.
     folder: "collections/_posts/"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
+    summary: '{{title}} - {{year}}/{{month}}/{{day}}'
     create: true
     editor:
       preview: true
+    view_filters:
+      - label: Drafts
+        field: draft
+        pattern: true
+    view_groups:
+      - label: Drafts
+        field: draft
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Created At", name: "created_at", widget: "datetime" }
       - { label: "Updated At", name: "updated_at", widget: "datetime" }
