@@ -5,13 +5,13 @@ backend:
   base_url: https://netlify-cms-oauth-client-py.herokuapp.com
   auth_endpoint: authorize
 
-media_folder: "assets/uploads"
+media_folder: "public/images"
 collections:
   - name: "blog"
     label: "Blog"
-    folder: "_posts/"
+    folder: "collections/_posts/"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{year}}/{{month}}/{{day}}/{{slug}}"
     editor:
       preview: false
     fields:
