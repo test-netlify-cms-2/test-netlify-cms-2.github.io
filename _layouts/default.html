@@ -24,7 +24,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             {% for item in site.data.navigation.top %}
-            <li class="nav-item text-end"><a href="{{ item.url }}" class="nav-link">{{ item.title }}</a></li>
+            <li class="nav-item text-end">
+              <a href="{{ item.url }}" class="nav-link">
+                {{ item.name }}
+              </a>
+            </li>
             {% endfor %}
           </ul>
         </div>
@@ -44,7 +48,9 @@
           <ul class="nav">
             {% for item in site.data.navigation.bottom %}
             <li class="nav-item">
-              <a class="nav-link" href="{{ item.url }}" title="{{ item.title }}" target="_blank"><i class="bi bi-{{ item.icon }}"></i> {{ item.name }}</a>
+              <a class="nav-link" href="{{ item.url }}" title="{{ site.title }} {{ item.name }}" target="_blank">
+                <i class="bi bi-{{ item.icon }}"></i> {{ item.name }}
+              </a>
             </li>
             {% endfor %}
           </ul>
