@@ -6,7 +6,6 @@ backend:
   auth_endpoint: authorize
   
 site_url: https://test-netlify-cms-2.github.io
-publish_mode: editorial_workflow
 
 media_folder: "public/images"
 collections:
