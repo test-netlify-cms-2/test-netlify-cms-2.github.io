@@ -1,10 +1,14 @@
 top:
-  - icon:
+  - icon: null
     name: Home
     url: /
-  - icon:
+  - icon: null
     name: About
     url: /about/
+  - name: Blog
+    url: /blog/
+  - name: Contact
+    url: /contact/
 bottom:
   - icon: github
     name: GitHub
