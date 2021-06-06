@@ -10,6 +10,23 @@ publish_mode: editorial_workflow
 
 media_folder: "public/images"
 collections:
+  - name: "page"
+    label: "Pages"
+    label_singular: "Page"
+    folder: "collections/_pages"
+    slug: "{{title}}"
+    summary: '{{title}} - {{created_at}}'
+    create: true
+    editor:
+      preview: true
+    filter: {field: "layout", value: "page"}
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Created At", name: "created_at", widget: "datetime" }
+      - { label: "Updated At", name: "updated_at", widget: "datetime" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
   - name: "blog"
     label: "Posts"
     label_singular: "Post"
@@ -28,6 +45,7 @@ collections:
     view_groups:
       - label: Drafts
         field: draft
+    filter: {field: "layout", value: "post"}
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
