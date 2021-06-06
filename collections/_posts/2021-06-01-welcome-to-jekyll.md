@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Welcome to Jekyll!"
-date: 2021-06-06T17:35:16.844Z
+title: Welcome to Jekyll!
+date: 2021-06-06T17:50:31.869Z
 tags:
   - jekyll
   - update
