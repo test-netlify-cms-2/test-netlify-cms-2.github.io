@@ -2,7 +2,7 @@ backend:
   name: github
   repo: test-netlify-cms-2/test-netlify-cms-2.github.io
   branch: main
-  base_url: https://gungorbudak.eu.auth0.com
+  base_url: https://netlify-cms-oauth-client-py.herokuapp.com
   auth_endpoint: authorize
 
 media_folder: "assets/uploads"
