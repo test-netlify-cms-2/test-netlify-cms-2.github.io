@@ -17,7 +17,7 @@ collections:
       The collection for the blog posts at the website.
     folder: "collections/_posts/"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    summary: '{{title}} - {{year}}/{{month}}/{{day}}'
+    summary: '{{title}} - {{created_at}}'
     create: true
     editor:
       preview: true
