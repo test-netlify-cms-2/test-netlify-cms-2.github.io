@@ -4,16 +4,23 @@ backend:
   branch: main
   base_url: https://netlify-cms-oauth-client-py.herokuapp.com
   auth_endpoint: authorize
+  
+site_url: https://test-netlify-cms-2.github.io
+publish_mode: editorial_workflow
 
 media_folder: "public/images"
 collections:
   - name: "blog"
-    label: "Blog"
+    label: "Blog posts"
+    label_singular: 'Blog post'
+    description: >
+      The collection for the blog posts at the website.
     folder: "collections/_posts/"
-    create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
+    create: true
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Title", name: "title", widget: "string" }
