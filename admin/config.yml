@@ -23,8 +23,8 @@ collections:
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Created At", name: "created_at", widget: "datetime", format: "DD-MM-YYYY HH:mm:ss" }
-      - { label: "Updated At", name: "updated_at", widget: "datetime", format: "DD-MM-YYYY HH:mm:ss" }
+      - { label: "Created At", name: "created_at", widget: "datetime" }
+      - { label: "Updated At", name: "updated_at", widget: "datetime" }
       - { label: "Content", name: "body", widget: "markdown" }
 
   - name: "post"
@@ -50,8 +50,8 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Created At", name: "created_at", widget: "datetime", format: "DD-MM-YYYY HH:mm:ss" }
-      - { label: "Updated At", name: "updated_at", widget: "datetime", format: "DD-MM-YYYY HH:mm:ss" }
+      - { label: "Created At", name: "created_at", widget: "datetime" }
+      - { label: "Updated At", name: "updated_at", widget: "datetime" }
       - {
           label: "Tags",
           name: "tags",
@@ -59,4 +59,4 @@ collections:
           summary: '{{fields.tag}}',
           field: { label: Tag, name: tag, widget: string },
         }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Content", name: "body", widget: "markdown" }
